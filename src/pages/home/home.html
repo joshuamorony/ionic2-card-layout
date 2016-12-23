@@ -1,0 +1,67 @@
+<ion-header no-border>
+  <ion-navbar color="secondary">
+  	<ion-buttons left>
+  		<button ion-button icon-only color="light"><ion-icon name="arrow-back"></ion-icon></button>
+  	</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen parallax-header>
+
+	<div class="header-image"></div>
+
+	<div class="main-content">
+
+		<ion-segment [(ngModel)]="category">
+			<ion-segment-button value="gear">
+				Gear
+			</ion-segment-button>
+			<ion-segment-button value="clothing">
+				Clothing
+			</ion-segment-button>
+			<ion-segment-button value="nutrition">
+				Nutrition
+			</ion-segment-button>
+		</ion-segment>
+
+		<ion-card *ngFor="let card of cards">
+
+		  <ion-item>
+		    <ion-avatar item-left>
+		      <img src="https://avatars.io/facebook/joshua.morony" />
+		    </ion-avatar>
+		    <h2>Josh Morony</h2>
+		    <p>November 5, 1955</p>
+		  </ion-item>
+
+		  <img src="assets/images/man.jpeg" />
+
+		  <ion-card-content>
+		  	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+		  </ion-card-content>
+
+		  <ion-row>
+		    <ion-col>
+		      <button ion-button icon-left clear small>
+		        <ion-icon name="thumbs-up"></ion-icon>
+		        <div>12 Likes</div>
+		      </button>
+		    </ion-col>
+		    <ion-col>
+		      <button ion-button icon-left clear small>
+		        <ion-icon name="text"></ion-icon>
+		        <div>4 Comments</div>
+		      </button>
+		    </ion-col>
+		    <ion-col center text-center>
+		      <ion-note>
+		        11h ago
+		      </ion-note>
+		    </ion-col>
+		  </ion-row>
+
+		</ion-card>
+
+	</div>
+
+</ion-content>
