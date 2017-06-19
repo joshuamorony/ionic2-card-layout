@@ -1,5 +1,9 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
@@ -11,6 +15,7 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     ParallaxHeader
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -18,6 +23,10 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     MyApp,
     HomePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
